@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div id="sc-ticker-tape"></div>
+    <script src=https://softcapital.com/widget/widget.js></script>
+    <style>
+     .sc-ticker-tape-item {padding: 4px 15px;}
+     .sc-ticker-tape {
+         background: linear-gradient(
+             -45deg,
+             rgba(249, 251, 253, 0.932),
+             rgba(234, 237, 240, 0.932),
+             rgba(239, 241, 245, 0.932),
+             rgba(236, 240, 245, 0.932)
+             );
+
+         background-size: 400% 400%;
+
+        -webkit-animation: Gradient 15s ease infinite;
+
+         -moz-animation: Gradient 15s ease infinite;
+
+         animation: Gradient 15s ease infinite;
+     }
+
+         @-webkit-keyframes Gradient {
+             0% {
+                 background-position: 0 50%;
+             }
+             50% {
+                 background-position: 100% 50%;
+             }
+             100% {
+                 background-position: 0 50%;
+             }
+         }
+
+         @-moz-keyframes Gradient {
+
+             0% {
+                 background-position: 0 50%;
+             }
+             50% {
+                 background-position: 100% 50%;
+             }
+             100% {
+                 background-position: 0 50%;
+             }
+
+         }
+         @keyframes Gradient {
+             0% {
+                 background-position: 0 50%;
+             }
+             50% {
+                 background-position: 100% 50%;
+             }
+             100% {
+                 background-position: 0 50%;
+             }
+         }
+    </style>
+    <style>
+        .headers-img {
+                    width: 100%;
+                    height: 400px;
+                    background-size: cover;
+                    }
+
+         .sidebar{
+            background-color:#e1e9f0;
+            padding: 20px;
+            box-shadow:
+            inset 0 -3em 3em rgba(207, 206, 206, 0.1),
+                    0 0  0 2px rgb(255,255,255),
+                    0.3em 0.3em 1em rgba(173, 172, 172, 0.3);
+        }
+      
+        .header-img {
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+        }
+        
+    </style>
+    <script>
+         createSoftCapitalWidget("TickerTape", "sc-ticker-tape", {
+             symbols:"ES=F,YM=F,NQ=F,RTY=F,ZB=F,ZN=F,ZF=F,ZT=F,GC=F,MGC=F,SI=F,SIL=F,PL=F,HG=F,PA=F,CL=F,HO=F,NG=F,RB=F,BZ=F,B0=F,ZC=F,ZO=F,KE=F,ZR=F,ZM=F,ZL=F,ZS=F,GF=F,HE=F,LE=F,CC=F,KC=F,CT=F,LBS=F,OJ=F,SB=F",
+             rows:1,logo:true,speed:5,mode:"chain",imgHeight:32
+     });
+    </script>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Agriculture{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Google Font -->
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+      />        
+        <!-- CSS Libraries -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/flaticon/font/flaticon.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/animate/animate.min.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/owlcarousel/assets/owl.carousel.min.css') }}">
+
+
+        <!-- Template Stylesheet -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+    </head>
+
+    <body>
+        <!-- Nav Bar Start -->
+        <div class="nav-bar">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a class="nav-item nav-link" id="Home" href="/">Home</a>
+                            <a class="nav-item nav-link" id="Energy" href="/energy">Energy</a>
+                            <a class="nav-item nav-link active" id="Agriculture" href="/agriculture">Agriculture</a>
+                            <a class="nav-item nav-link" id="Economy" href="/economy">Economy</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu">
+                                    <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                    <a href="single.html" class="dropdown-item">Detail Page</a>
+                                    <a href="team.html" class="dropdown-item">Team Member</a>
+                                    <a href="booking.html" class="dropdown-item">Schedule Booking</a>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <div class="ml-auto">
+                            <a class="btn btn-custom" href="https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Frraos.rjobrien.com%2FAccount%2FBroker%2FFA4E62B0-99CA-EA11-80F6-8CDCD418B4A8&data=02%7C01%7Cmsabo%40rjobrien.com%7Cd639ced35b724af3b16008d82f0fa85a%7C96e17d10a58f4efcacefbe3521190113%7C0%7C0%7C637311091594538465&sdata=Z%2Fzs1H52Mo1XKjgobwWq6KPcXCEMDkgrYrlWIrmb9XU%3D&reserved=0" target="_blank" rel="noopener noreferrer">Open Account</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+
+        
+        <!-- Page Header Start -->
+      <!-- <div class="headers-img">
+            <image src="{{url_for('static',filename = 'images/agricult.jpg')}}" alt="..." ></image>
+
+        </div>
+    -->
+        <div class="page-header">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Agriculture</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Agriculture</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        
+
+        <!-- Single Post Start-->
+        <div class="single">
+            <div class="container">
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="single-content">
+                        <h2>USDA Foreign Agricultural Service </h2>
+                        <br>                          		 
+                        <p id="date">
+                        </p>
+                       <script>
+                               document.getElementById("date").innerHTML = Date();
+                       </script>  
+
+
+
+                        <div id="accordion">
+                            <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                   <b>Commodity Costs and Returns</b> 
+                                </button>
+                                </h5>
+                            </div>
+                        
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class='tableauPlaceholder' id='viz1634739099586' 
+                                    style='position: relative'  text-align:left-side;>
+                                    <noscript>
+                                            <a href='https:&#47;&#47;www.ers.usda.gov&#47;'>
+                                                <img alt='Commodity Costs and Returns ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;
+                                                InteractiveVisualizationU_S_CommodityCostsandReturnsbyRegionandbyCommodity&#47;CommodityCostsandReturns&#47;1_rss.png' 
+                                                style='border: none' />
+                                            </a>
+                                    </noscript>
+                                    <object class='tableauViz'  style='display:none;'>
+                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                                        <param name='embed_code_version' value='3' /> 
+                                        <param name='site_root' value='' />
+                                        <param name='name' value='InteractiveVisualizationU_S_CommodityCostsandReturnsbyRegionandbyCommodity&#47;CommodityCostsandReturns' />
+                                        <param name='tabs' value='no' /> <param name='toolbar' value='no' />
+                                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;
+                                        InteractiveVisualizationU_S_CommodityCostsandReturnsbyRegionandbyCommodity&#47;CommodityCostsandReturns&#47;1.png'/> 
+                                        <param name='animate_transition' value='yes' />
+                                        <param name='display_static_image' value='yes' />
+                                        <param name='display_spinner' value='yes' />
+                                        <param name='display_overlay' value='yes' />
+                                        <param name='display_count' value='yes' /><param name='language' value='en-US' />
+                                        <param name='filter' value='amp;:display_count=n' />
+                                        <param name='filter' value='amp;:origin=viz_share_link' /> 
+                                    </object>  
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+                            </div>
+                            <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <b>US Drought Monitor</b>
+                                </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+
+                                    <iframe src="https://www.drought.gov/historical-information?dataset=0&selectedDateUSDM=20101130&embedded=true" 
+                                    name="Drought.gov Historical Information" width="100%" height="1250px" scrolling="no" id="iframex" >
+                                    </iframe>
+
+
+
+
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                   </div> 
+
+
+
+                    </div>
+
+
+                    <div class="col-sm-8">
+                        <div class="single-content">
+                        <!-- Page Content-->
+
+
+                          <!-- Page Content-->
+                                       
+                        
+                        <script type='text/javascript'   text-align:left-side;>var divElement = document.getElementById('viz1634739099586'); 
+                            var vizElement = divElement.getElementsByTagName('object')[0];vizElement.style.width='100%';vizElement.style.height='1050px';
+                            onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'
+                            var scriptElement = document.createElement('script');                    
+                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                        </script>
+                        
+                                    
+                        
+                        
+                         <h1>    World Markets and Trade  </h1>
+                        
+                         <div >
+                            <table class="table" >
+                                 <tr> 
+                                      <td>
+                                            <h3>Wheat </h3> 
+                                            <h6> Overview for 2021/22: </h6> 
+                                             <p>  Global production is lowered this month with lower estimates for the United States, Canada,Kazakhstan, and Iran. Global consumption is 
+                                                 down this month, though it remains higher than the prior year. Stocks are adjusted lower, especially for Iran on a multi-year revision.
+                                                 Exports are lifted for Australia, the European Union, and India, though down for canada. 
+                                                 The U.S. season-average farm price is up 10 cents to $6.70 per bushel.
+                                             </p>
+                                       </td>
+                         
+                                 
+                                       <td>
+                         
+                                           <h3>Sugar</h3>
+                       
+                                            <h6> Overview for 2021/22: </h6> 
+                                            <p> U.S. production is forecast up marginally to a record 8.4 million tons, as gains from beet sugar more
+                                                than offset the drop in cane sugar production in Louisiana. Imports are down 16 percent to 2.4 million tons based on projected 
+                                                quota programs and the calculation of U.S.Consumption is forecast unchanged while stocks are lowered with the drop in imports.
+                                            </p>
+                           
+                                       </td>
+                                 </tr>
+                
+                
+                
+                                 <tr>
+                                        <td>
+                                                <h3>  Grains </h3>
+                                                <h6> Overview for 2021/22: </h6>
+                                                 <P> Global corn production is up marginally with larger crops in Canada, the European Union, Venezuela, and the United States outweighing smaller crops in Guatemala, Russia, and Ukraine. Global trade is
+                                                      lower than last month as cuts to Brazil and Ukraine more than offset higher exports for India and the
+                                                     United States. Global imports are also down on cuts to Chile and Vietnam. The U.S. season-average
+                                                      farm price is unchanged at $5.45 per bushel.   
+                                                </P>
+                                        </td>
+                                  
+                        
+                                  
+                                         <td>
+                                                  <h3>  Cotton  </h3>
+                                                  <h6> Overview for 2021/22: </h6>
+                                                  <p> Global production is raised with larger crops in Pakistan and Turkey more than offsetting lower crops in
+                                                       the United States and India. Use is lowered with consumption falling in China and Vietnam, more than
+                                                        offsetting higher consumption in Pakistan and Turkey. Restrictions on China’s electricity use and COVID19 restrictions in Vietnam (August through September) result in lower projections for consumption.
+                                                       Global trade is down on lower imports for Pakistan and Vietnam more than offsetting greater China
+                                                       demand. Exports are lowered for India and Brazil, with the former having significantly lower supplies compared with last month. 
+                                                 </p>
+                                         </td>
+                                         </tr>
+                                         <tr>
+                                         <td>
+                        
+                                                    <h3>Rice</h3>
+                                                    <h6> Overview for 2021/22: </h6>
+                                                    <p> Global rice production is forecast higher this month, mostly on a larger crop in India. The consumption forecast was raised primarily for countries in Asia and Africa.
+                                                        Global stocks are up primarily due to higher forecasts for China and India. Global trade is forecast up, with stronger
+                                                        exports for India and larger imports for China, Nepal, and the Philippines. 
+                                                     </p>
+                        
+                                                    <h6> Overview for 2020/21: </h6> 
+                                                    <p> Global rice production is estimated slightly higher mostly due to an upward revision for Madagascar. 
+                                                        Global stocks are down primarily on a smaller estimate for India. 
+                                                        Global trade is forecast higher with imports up for China and Nepal. Record exports from India more than offset lower exports for Pakistan, Burma, and Vietnam.
+                                                    </p>
+                                           </td>
+                        
+                        
+                                                    <td>	
+                                                     <h3>  Coffee </h3>
+                                                      <h6> Overview for 2021/22: </h6>
+                                                       <p> Global production is forecast down 11.0 million bags from the previous year to 164.8 million, due primarily to Brazil’s combined
+                                                               effect of Arabica trees entering the off‐year of the   biennial production cycle and a weather‐related
+                                                               shortfall. As a result of lower output, global ending inventories are expected to drop 7.9 million bags to 32.0 million.
+                                                       </p>
+                            
+                                                       <h6> Overview for 2020/21: </h6> 
+                                                       <p> World production is revised up 300,000 bags from the December 2020 estimate to 175.8 million. Brazil is up 2.0 million bags to 69.9 million, largely due to updated data for Arabica output.
+                                                                 Uganda is revised 1.2 million bags higher to 6.0 million largely due to increased area.
+                                                                 Peru is lowered 1.1 million bags to 3.4 million on updated area and yield data.
+                             
+                                                       </p>
+                        
+                                          </td>
+                                   </tr>
+                        
+                            </table>
+                       
+                         </div>
+                
+                          <div>
+                              <container>
+                              <iframe src="https://app.usda-reports.penguinlabs.net/?year=2020&crop=corn_grain&statistic=production_dollars" 
+                                      style="overflow:hidden; width:100%; height:2150px;" scrolling="no" allowTransparency="true">
+                              </iframe>
+                              </container>
+
+
+                     
+                           </div>	
+                                 
+                         
+                  <!-- Page Content End-->
+
+
+
+
+
+
+
+                        <!-- Page Content End-->
+                        </div>
+                        <div class="single-tags">
+                            <a href="">National</a>
+                            <a href="">International</a>
+                            <a href="">Economics</a>
+                            <a href="">Trades</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="sidebar">
+
+                            <div class="sidebar-widget">
+                                <div class="tab-post">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="pill" href="#featured">Featured</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="pill" href="#popular">Popular</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="pill" href="#latest">Latest</a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div id="featured" class="container tab-pane active">
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="popular" class="container tab-pane fade">
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="latest" class="container tab-pane fade">
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/icon.png')}}" class="d-block w-100" alt="..." ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget">
+                                <h2 class="widget-title">Tags Cloud</h2>
+                                <div class="tag-widget">
+                                    <a href="">Sugar</a>
+                                    <a href="">Wheat</a>
+                                    <a href="">Rice</a>
+                                    <a href="">Grains</a>
+                                </div>
+                            </div>
+
+                            <!--<div class="sidebar-widget">
+                                <h2 class="widget-title">US Drought Monitor</h2>
+                                <div class="text-widget">
+                                    <div>
+                                        <container>							
+                                            <iframe src="https://www.drought.gov/historical-information?dataset=0&selectedDateUSDM=20101130&embedded=true" 
+                                                      name="Drought.gov Historical Information" width="100%" height="1900px" scrolling="no" id="iframex" >
+                                            </iframe>
+                                        </container>
+                                    </div>
+                                </div>
+                            </div>
+                             -->
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <!-- Single Post End-->  
+
+
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact"> 
+                            <h2>Get In Touch</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>Sioux Falls, South Dakota</p>
+                            <p><i class="fa fa-phone-alt"></i>507-217-9263</p>
+                            <p><i class="fa fa-envelope"></i>jamie@paradigmfutures.net</p>
+                            <div class="footer-social">
+                                <a class="btn" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="btn" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Popular Links</h2>
+                            <a href="">About Us</a>
+                            <a href="">Contact Us</a>
+                            <a href="">Our Service</a>
+                            <a href="">Service Points</a>
+                            <a href="">Pricing Plan</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Useful Links</h2>
+                            <a href="">Terms of use</a>
+                            <a href="">Privacy policy</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-newsletter">
+                            <h2>Newsletter</h2>
+                            <form>
+                                <input class="form-control" placeholder="Full Name">
+                                <input class="form-control" placeholder="Email">
+                                <button class="btn btn-custom">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='easing.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='waypoints.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='counterup.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='owl.carousel.min.js') }}"></script>
+
+        
+        <!-- Contact Javascript File -->
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='jqBootstrapValidation.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='contact.js') }}"></script>
+
+        <!-- Template Javascript -->
+        <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='index.js') }}"
+      ></script>
+    </body>
+</html>

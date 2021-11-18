@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div id="sc-ticker-tape"></div>
+    <script src=https://softcapital.com/widget/widget.js></script>
+    <style>
+     .sc-ticker-tape-item {padding: 4px 15px;}
+     .sc-ticker-tape {
+         background: linear-gradient(
+             -45deg,
+             rgba(249, 251, 253, 0.932),
+             rgba(234, 237, 240, 0.932),
+             rgba(239, 241, 245, 0.932),
+             rgba(236, 240, 245, 0.932)
+             );
+
+         background-size: 400% 400%;
+
+        -webkit-animation: Gradient 15s ease infinite;
+
+         -moz-animation: Gradient 15s ease infinite;
+
+         animation: Gradient 15s ease infinite;
+     }
+
+         @-webkit-keyframes Gradient {
+             0% {
+                 background-position: 0 50%;
+             }
+             50% {
+                 background-position: 100% 50%;
+             }
+             100% {
+                 background-position: 0 50%;
+             }
+         }
+
+         @-moz-keyframes Gradient {
+
+             0% {
+                 background-position: 0 50%;
+             }
+             50% {
+                 background-position: 100% 50%;
+             }
+             100% {
+                 background-position: 0 50%;
+             }
+
+         }
+         @keyframes Gradient {
+             0% {
+                 background-position: 0 50%;
+             }
+             50% {
+                 background-position: 100% 50%;
+             }
+             100% {
+                 background-position: 0 50%;
+             }
+         }
+    </style>
+    <script>
+         createSoftCapitalWidget("TickerTape", "sc-ticker-tape", {
+             symbols:"ES=F,YM=F,NQ=F,RTY=F,ZB=F,ZN=F,ZF=F,ZT=F,GC=F,MGC=F,SI=F,SIL=F,PL=F,HG=F,PA=F,CL=F,HO=F,NG=F,RB=F,BZ=F,B0=F,ZC=F,ZO=F,KE=F,ZR=F,ZM=F,ZL=F,ZS=F,GF=F,HE=F,LE=F,CC=F,KC=F,CT=F,LBS=F,OJ=F,SB=F",
+             rows:1,logo:true,speed:5,mode:"chain",imgHeight:32
+     });     
+    </script>
+    <style>
+        .carousel-inner{
+            height: 500px;
+        }
+
+        .carousel-image{
+            height: 500px !important;
+            width:  100% !important;
+            backdrop-filter: blur(100px); 
+        }
+    </style>
+    <style>
+
+    </style>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Home{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Google Font -->
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+      />        
+        <!-- CSS Libraries -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/whyservice/responsive.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/whyservice/style.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/flaticon/font/flaticon.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/animate/animate.min.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/owlcarousel/assets/owl.carousel.min.css') }}">
+
+
+        <!-- Template Stylesheet -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+    </head>
+
+    <body>
+        <!-- Nav Bar Start -->
+        <div class="nav-bar">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">                            
+                            <a class="nav-item nav-link active" id="Home" href="/">Home</a>
+                            <a class="nav-item nav-link" id="Energy" href="#service">Agriculture</a>
+                            <a class="nav-item nav-link" id="Energy" href="#economy">Economy</a>
+                            <a class="nav-item nav-link" id="Energy" href="#energy">Energy</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu">
+                                    <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                    <a href="single.html" class="dropdown-item">Detail Page</a>
+                                    <a href="team.html" class="dropdown-item">Team Member</a>
+                                    <a href="booking.html" class="dropdown-item">Schedule Booking</a>
+                                </div>
+                            </div>
+                            <a class="nav-item nav-link" id="Contact" href="/contact">Contact</a>
+                        </div>
+                        <div class="ml-auto">
+                            <a class="btn btn-custom" href="https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Frraos.rjobrien.com%2FAccount%2FBroker%2FFA4E62B0-99CA-EA11-80F6-8CDCD418B4A8&data=02%7C01%7Cmsabo%40rjobrien.com%7Cd639ced35b724af3b16008d82f0fa85a%7C96e17d10a58f4efcacefbe3521190113%7C0%7C0%7C637311091594538465&sdata=Z%2Fzs1H52Mo1XKjgobwWq6KPcXCEMDkgrYrlWIrmb9XU%3D&reserved=0" target="_blank" rel="noopener noreferrer">Open Account</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+        <!-- Carousel Start -->                
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="carousel-text">                            
+                    <h3><b>Shaping the Future</b></h1>
+                    <p>
+                       Helping producers withstand volatile markets and low prices by developing hedging strategies to mitigate risk
+                    </p>
+                    <a class="btn btn-custom" href="">Explore More</a>
+                </div>
+            </div>           
+              <div class="carousel-item">
+                <div class="carousel-image">
+                    <image src="{{url_for('static',filename = 'images/home.jpg')}}" class="d-block w-100" alt="..." ></image>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="carousel-image">
+                    <image src="{{url_for('static',filename = 'images/home.jpg')}}" class="d-block w-100" alt="..." ></image>
+                  </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        <!-- Carousel End -->
+
+
+        <!-- About Start -->
+        <!--
+        <div class="about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-img">
+                            <img src="img/about.jpg" alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="section-header text-left">
+                            <p>About Us</p>
+                            <h2>car washing and detailing</h2>
+                        </div>
+                        <div class="about-content">
+                            <p>
+                                Lorem ipsum dolor sit amet elit. In vitae turpis. Donec in hendre dui, vel blandit massa. Ut vestibu suscipi cursus. Cras quis porta nulla, ut placerat risus. Aliquam nec magna eget velit luctus dictum
+                            </p>
+                            <ul>
+                                <li><i class="far fa-check-circle"></i>Seats washing</li>
+                                <li><i class="far fa-check-circle"></i>Vacuum cleaning</li>
+                                <li><i class="far fa-check-circle"></i>Interior wet cleaning</li>
+                                <li><i class="far fa-check-circle"></i>Window wiping</li>
+                            </ul>
+                            <a class="btn btn-custom" href="">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+        <!-- About End -->
+
+
+        <!-- Service Start -->
+        <!--
+        <div class="service">
+            <div class="container">
+                <div class="section-header">
+                    <p>What We Do?</p>
+                    <h2>World-class Trading Strategies</h2>
+                </div>          
+                <div class="row container">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4 text-center">
+                        <div class="service-item">
+                            <i class="flaticon-car-wash-1"></i>
+                            <h3>Economy</h3>
+                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4 text-center">
+                        <div class="service-item">
+                            <i class="flaticon-car-wash"></i>
+                            <h3>Agriculture</h3>
+                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4 text-center">
+                        <div class="service-item">
+                            <i class="flaticon-vacuum-cleaner"></i>
+                            <h3>Energy</h3>
+                            <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                        </div>
+                    </div>              
+                </div>
+            </div>
+        </div>
+          -->
+        <!-- Service End -->
+        
+    <!-- why ride section start -->
+    
+      <div class="service" id="service">
+        <div class="container">
+            <div class="section-header">
+                <p>What We Do?</p>
+                <h3><b>Commodities & Futures Market Insights </b></h3>
+            </div>  
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="image_3"><image src="{{url_for('static',filename = 'images/Agri.jpg')}}" class="rounded" ></image></div>
+            </div>
+            <div class="col-sm-8">
+              <h1 class="cabe_text">Agriculture</h1>
+              <p class="long_text"><b>U.S. Commodity Costs and Returns by Region and by Commodity </b>Cost and return estimates are reported for the United States and major production regions for corn, soybeans, wheat, cotton, grain sorghum, rice, peanuts, oats, barley, milk, hogs, and cow-calf. The series of commodity cost and return estimates for the U.S. and regions is divided into two categories: Recent and Historical estimates. Recent estimates date back to the point of the most recent major revision in accounting methods, account format, and regional definitions for each commodity. Historical estimates date back to when the series began. Cost-of-Production Forecasts are also available for major U.S. field crops. Organic Costs and Returns for corn, milk, wheat, and soybeans are also available.</p>
+              <div class="book_bt">
+                <a class="nav-item nav-link" id="Energy" href="/agriculture">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="jumbotron jumbotron-fluid">
+              <div class="container"  id="energy">
+                <div class="row">
+                  <div class="col-sm-4">
+                      <div class="image_3"><image src="{{url_for('static',filename = 'images/energygraph.gif')}}" class="rounded"></image></div>
+                    </div>
+                  <div class="col-sm-8">
+                    <h1 class="cabe_text">Energy</h1>
+                    <p class="long_text"><b>Prices of crude oil and petroleum products have increased</b> from the lows seen in 2020 and are near their highest levels since 2014. As a result of the COVID-19 pandemic, demand for crude oil and petroleum products declined rapidly, inventories increased, and prices fell. This year, demand returned to 2019 levels faster than supply, reducing inventories and raising prices. Crude oil, gasoline, and distillate prices were all higher this week, than they have been since February 2020.</p>
+                    <div class="book_bt">
+                      <a class="nav-item nav-link" id="Energy" href="/energy">Read more</a></div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <br>
+          <br>
+
+        <div class="container"  id="economy">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="image_3"><image src="{{url_for('static',filename = 'images/EmploymentSituation.PNG')}}" class="rounded" ></image></div>
+            </div>
+            <div class="col-sm-8">
+              <h1 class="cabe_text">Economy</h1>
+              <p class="long_text"><b>Employment Situation</b>
+
+                Total nonfarm payroll employment rose by 194,000 in September, and the unemployment rate fell to 4.8 percent. Job gains occurred in leisure and hospitality, in professional and business services, in retail trade, and in transportation and warehousing. Employment in public education declined.</p>
+              <div class="book_bt">
+                <a class="nav-item nav-link" id="Energy" href="/economy">Read more</a></div>
+                <br>
+                <br>
+                <br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- why ride section end -->
+
+
+
+
+        
+        <!-- Facts Start -->
+        <div class="facts" data-parallax="scroll" data-image-src="{{url_for('static',filename = 'images/facts.jpg')}}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="fa fa-map-marker-alt"></i>
+                            <div class="facts-text">
+                                <h3 data-toggle="counter-up">25</h3>
+                                <p>Service Points</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="fa fa-user"></i>
+                            <div class="facts-text">
+                                <h3 data-toggle="counter-up">350</h3>
+                                <p>Engineers & Workers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="fa fa-users"></i>
+                            <div class="facts-text">
+                                <h3 data-toggle="counter-up">1500</h3>
+                                <p>Happy Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="fa fa-check"></i>
+                            <div class="facts-text">
+                                <h3 data-toggle="counter-up">5000</h3>
+                                <p>Projects Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Facts End -->
+        
+
+        
+        
+      <!-- Location Start -->
+      <!--  
+        <div class="location">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="section-header text-left">
+                            <p>Washing Points</p>
+                            <h2>Car Washing & Care Points</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="location-item">
+                                    <i class="fa fa-map-marker-alt"></i>
+                                    <div class="location-text">
+                                        <h3>Car Washing Point</h3>
+                                        <p>123 Street, New York, USA</p>
+                                        <p><strong>Call:</strong>+012 345 6789</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="location-item">
+                                    <i class="fa fa-map-marker-alt"></i>
+                                    <div class="location-text">
+                                        <h3>Car Washing Point</h3>
+                                        <p>123 Street, New York, USA</p>
+                                        <p><strong>Call:</strong>+012 345 6789</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="location-item">
+                                    <i class="fa fa-map-marker-alt"></i>
+                                    <div class="location-text">
+                                        <h3>Car Washing Point</h3>
+                                        <p>123 Street, New York, USA</p>
+                                        <p><strong>Call:</strong>+012 345 6789</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="location-item">
+                                    <i class="fa fa-map-marker-alt"></i>
+                                    <div class="location-text">
+                                        <h3>Car Washing Point</h3>
+                                        <p>123 Street, New York, USA</p>
+                                        <p><strong>Call:</strong>+012 345 6789</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="location-form">
+                            <h3>Request for a car wash</h3>
+                            <form>
+                                <div class="control-group">
+                                    <input type="text" class="form-control" placeholder="Name" required="required" />
+                                </div>
+                                <div class="control-group">
+                                    <input type="email" class="form-control" placeholder="Email" required="required" />
+                                </div>
+                                <div class="control-group">
+                                    <textarea class="form-control" placeholder="Description" required="required"></textarea>
+                                </div>
+                                <div>
+                                    <button class="btn btn-custom" type="submit">Send Request</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    -->
+        <!-- Location End -->
+
+
+        <!-- Team Start -->
+       <!--<div class="team">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Meet Our Team</p>
+                    <h2>Our Engineers & Workers</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-1.jpg" alt="Team Image">
+                            </div>
+                            <div class="team-text">
+                                <h2>Donald John</h2>
+                                <p>Engineer</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-2.jpg" alt="Team Image">
+                            </div>
+                            <div class="team-text">
+                                <h2>Adam Phillips</h2>
+                                <p>Engineer</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-3.jpg" alt="Team Image">
+                            </div>
+                            <div class="team-text">
+                                <h2>Thomas Olsen</h2>
+                                <p>Worker</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-4.jpg" alt="Team Image">
+                            </div>
+                            <div class="team-text">
+                                <h2>James Alien</h2>
+                                <p>Worker</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        --> 
+        <!-- Team End -->
+        
+        
+        <!-- Testimonial Start -->
+        <!--
+        <div class="testimonial">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Testimonial</p>
+                    <h2>What our clients say</h2>
+                </div>
+                <div class="owl-carousel testimonials-carousel">
+                    <div class="testimonial-item">
+                        <img src="img/testimonial-1.jpg" alt="Image">
+                        <div class="testimonial-text">
+                            <h3>Client Name</h3>
+                            <h4>Profession</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor auctor gravid
+                            </p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="img/testimonial-2.jpg" alt="Image">
+                        <div class="testimonial-text">
+                            <h3>Client Name</h3>
+                            <h4>Profession</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor auctor gravid
+                            </p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="img/testimonial-3.jpg" alt="Image">
+                        <div class="testimonial-text">
+                            <h3>Client Name</h3>
+                            <h4>Profession</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor auctor gravid
+                            </p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="img/testimonial-4.jpg" alt="Image">
+                        <div class="testimonial-text">
+                            <h3>Client Name</h3>
+                            <h4>Profession</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor auctor gravid
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+        <!-- Testimonial End -->
+
+
+        <!-- Blog Start -->
+        <div class="blog">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Our Blog</p>
+                    <h2>Latest news & articles</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                              <image src="{{url_for('static',filename = 'images/btc.jpg')}}" ></image>
+                                <div class="meta-date">
+                                    <span>01</span>
+                                    <strong>Jan</strong>
+                                    <span>2045</span>
+                                </div>
+                            </div>
+                            <div class="blog-text">
+                                <h3><a href="#">Lorem ipsum dolor sit amet</a></h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet elit. Pellent iaculis blandit lorem, quis convall diam eleife. Nam in arcu sit amet massa ferment quis enim. Nunc  augue velit metus congue eget semper
+                                </p>
+                            </div>
+                            <div class="blog-meta">
+                                <p><i class="fa fa-user"></i><a href="">Admin</a></p>
+                                <p><i class="fa fa-folder"></i><a href="">Web Design</a></p>
+                                <p><i class="fa fa-comments"></i><a href="">15 Comments</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                              <image src="{{url_for('static',filename = 'images/coffee.jpg')}}" ></image>
+                                <div class="meta-date">
+                                    <span>01</span>
+                                    <strong>Jan</strong>
+                                    <span>2045</span>
+                                </div>
+                            </div>
+                            <div class="blog-text">
+                                <h3><a href="#">Lorem ipsum dolor sit amet</a></h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet elit. Pellent iaculis blandit lorem, quis convall diam eleife. Nam in arcu sit amet massa ferment quis enim. Nunc  augue velit metus congue eget semper
+                                </p>
+                            </div>
+                            <div class="blog-meta">
+                                <p><i class="fa fa-user"></i><a href="">Admin</a></p>
+                                <p><i class="fa fa-folder"></i><a href="">Web Design</a></p>
+                                <p><i class="fa fa-comments"></i><a href="">15 Comments</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                              <image src="{{url_for('static',filename = 'images/map.png')}}" ></image>
+                                <div class="meta-date">
+                                    <span>01</span>
+                                    <strong>Jan</strong>
+                                    <span>2045</span>
+                                </div>
+                            </div>
+                            <div class="blog-text">
+                                <h3><a href="#">Lorem ipsum dolor sit amet</a></h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet elit. Pellent iaculis blandit lorem, quis convall diam eleife. Nam in arcu sit amet massa ferment quis enim. Nunc  augue velit metus congue eget semper
+                                </p>
+                            </div>
+                            <div class="blog-meta">
+                                <p><i class="fa fa-user"></i><a href="">Admin</a></p>
+                                <p><i class="fa fa-folder"></i><a href="">Web Design</a></p>
+                                <p><i class="fa fa-comments"></i><a href="">15 Comments</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact">
+                            <h2>Get In Touch</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>Sioux Falls, South Dakota</p>
+                            <p><i class="fa fa-phone-alt" style='font-size:24px'></i>507-217-9263</p>
+                            <p><i class="fa fa-envelope"></i>jamie@paradigmfutures.net</p>
+                            <div class="footer-social">
+                                <a class="btn" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="btn" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Popular Links</h2>
+                            <a href="">About Us</a>
+                            <a href="">Contact Us</a>
+                            <a href="">Our Service</a>
+                            <a href="">Service Points</a>
+                            <a href="">Pricing Plan</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Useful Links</h2>
+                            <a href="">Terms of use</a>
+                            <a href="">Privacy policy</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-newsletter">
+                            <h2>Newsletter</h2>
+                            <form>
+                                <input class="form-control" placeholder="Full Name">
+                                <input class="form-control" placeholder="Email">
+                                <button class="btn btn-custom">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='easing.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='waypoints.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='counterup.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='owl.carousel.min.js') }}"></script>
+
+        
+        <!-- Contact Javascript File -->
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='jqBootstrapValidation.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='contact.js') }}"></script>
+
+        <!-- Template Javascript -->
+        <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='index.js') }}"
+      ></script>
+    </body>
+</html>

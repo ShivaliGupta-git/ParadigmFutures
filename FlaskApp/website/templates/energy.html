@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div id="sc-ticker-tape"></div>
+       <script src=https://softcapital.com/widget/widget.js></script>
+       <style>
+        .sc-ticker-tape-item {padding: 4px 15px;}
+        .sc-ticker-tape {
+            background: linear-gradient(
+                -45deg,
+             rgba(249, 251, 253, 0.932),
+             rgba(234, 237, 240, 0.932),
+             rgba(239, 241, 245, 0.932),
+             rgba(236, 240, 245, 0.932)
+             );
+              
+
+            background-size: 400% 400%;
+
+           -webkit-animation: Gradient 15s ease infinite;
+
+            -moz-animation: Gradient 15s ease infinite;
+
+            animation: Gradient 15s ease infinite;
+        }
+ 
+            @-webkit-keyframes Gradient {
+                0% {
+                    background-position: 0 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0 50%;
+                }
+            }
+
+            @-moz-keyframes Gradient {
+
+                0% {
+                    background-position: 0 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0 50%;
+                }
+
+            }
+            @keyframes Gradient {
+                0% {
+                    background-position: 0 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0 50%;
+                }
+            }
+       </style>
+    <style>
+        .sidebar{
+            background-color:#e1e9f0;
+            padding: 20px;
+            box-shadow:
+            inset 0 -3em 3em rgba(207, 206, 206, 0.1),
+                    0 0  0 2px rgb(255,255,255),
+                    0.3em 0.3em 1em rgba(173, 172, 172, 0.3);
+        }
+        .card-body{
+            background-color:#fbfcfde5;
+            padding: 20px;
+            box-shadow:
+            inset 0 -3em 3em rgba(78, 76, 76, 0.1),
+                    0 0  0 2px rgb(255,255,255),
+                    0.3em 0.3em 1em rgba(71, 71, 71, 0.3);
+        }
+    </style>
+
+       <style>
+        .page-header{
+            height:50px,
+        }
+        .page-header a {
+        font-size: 10px;
+    }
+       </style>
+       <script>
+            createSoftCapitalWidget("TickerTape", "sc-ticker-tape", {
+                symbols:"ES=F,YM=F,NQ=F,RTY=F,ZB=F,ZN=F,ZF=F,ZT=F,GC=F,MGC=F,SI=F,SIL=F,PL=F,HG=F,PA=F,CL=F,HO=F,NG=F,RB=F,BZ=F,B0=F,ZC=F,ZO=F,KE=F,ZR=F,ZM=F,ZL=F,ZS=F,GF=F,HE=F,LE=F,CC=F,KC=F,CT=F,LBS=F,OJ=F,SB=F",
+                rows:1,logo:true,speed:5,mode:"chain",imgHeight:32
+        });
+       </script>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Energy{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Google Font -->
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+      />        
+        <!-- CSS Libraries -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/flaticon/font/flaticon.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/animate/animate.min.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/owlcarousel/assets/owl.carousel.min.css') }}">
+
+
+        <!-- Template Stylesheet -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+    </head>
+
+    <body>
+        <!-- Nav Bar Start -->
+        <div class="nav-bar">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a class="nav-item nav-link" id="Home" href="/">Home</a>
+                            <a class="nav-item nav-link active" id="Energy" href="/energy">Energy</a>
+                            <a class="nav-item nav-link" id="Agriculture" href="/agriculture">Agriculture</a>
+                            <a class="nav-item nav-link" id="Economy" href="/economy">Economy</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu">
+                                    <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                    <a href="single.html" class="dropdown-item">Detail Page</a>
+                                    <a href="team.html" class="dropdown-item">Team Member</a>
+                                    <a href="booking.html" class="dropdown-item">Schedule Booking</a>
+                                </div>
+                            </div>
+                            <a class="nav-item nav-link" id="Contact" href="/contact">Contact</a>
+                        </div>
+                        <div class="ml-auto">
+                            <a class="btn btn-custom" href="https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Frraos.rjobrien.com%2FAccount%2FBroker%2FFA4E62B0-99CA-EA11-80F6-8CDCD418B4A8&data=02%7C01%7Cmsabo%40rjobrien.com%7Cd639ced35b724af3b16008d82f0fa85a%7C96e17d10a58f4efcacefbe3521190113%7C0%7C0%7C637311091594538465&sdata=Z%2Fzs1H52Mo1XKjgobwWq6KPcXCEMDkgrYrlWIrmb9XU%3D&reserved=0" target="_blank" rel="noopener noreferrer">Open Account</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+
+        
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Energy</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Energy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+                    
+
+        
+        <!-- Single Post Start-->
+        <div class="single">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="single-content">
+                            <!-- Page Content-->
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h2> Crude Oil </h2>
+                                        <br>
+                                        <h4> U.S. Field Production of Crude Oil, Monthly</h4>
+                                        <p>U.S. crude oil production has grown slowly. U.S. crude oil production, which averaged 12.8 million b/d in February 2020, fell to 9.7 million b/d in May 2020. Although U.S. crude oil production has since increased from that low point, it has remained at about 11.0 million b/d since January 2021, due in part to significant disruptions from cold weather in February and from Hurricane Ida in September. It is estimated that U.S. crude oil production averaged 11.3 million b/d the week of October 22, a 12% decrease from U.S. production in February 2020.</p>
+                                        <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=PET.MCRFPUS1.M" load="iframe_load"></iframe>
+                                        <br>
+                                        <br>
+                                        <h4> U.S. Imports of Crude Oil, Weekly </h4>
+                                        <p>U.S. crude oil imports averaged 6.3 million barrels per day last week, up by 430,000 barrels per
+                                        day from the previous week. Over the past four weeks, crude oil imports averaged about 6.3
+                                        million barrels per day, 15.2% more than the same four-week period last year. </p>
+                                        <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=PET.WCRIMUS2.W" load="iframe_load"></iframe>
+                                        <br>
+                                        <br>
+                                        <h4> Cushing, OK Ending Stocks excluding SPR of Crude Oil, Weekly </h4>
+                                        <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=PET.W_EPC0_SAX_YCUOK_MBBL.W" load="iframe_load"></iframe>
+                                        <br>
+                                        <div class="single-tags">
+                                            <a href="">Crude Oil</a>
+                                            <a href="">Imports</a>
+                                            <a href="">Cushing,OK</a>
+                                            <a href="">Production</a>
+                                        </div>
+                                    </div>
+                                </div>
+								<br>
+								<br>
+                                 
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h2> Gasoline RBOB </h2>
+                                        <br>
+                                        <h3> Retail Gasoline Prices</h3>
+                                        <p> The U.S. average regular gasoline retail price increased more than 6 cents to $3.38 per gallon on October 25, $1.24 higher than a year ago. The East Coast price increased nearly 10 cents to $3.34 per gallon, the Gulf Coast price increased nearly 8 cents to $3.06 per gallon, the West Coast price increased nearly 6 cents to $4.07 per gallon, and the Midwest price increased nearly 2 cents to $3.22 per gallon. The Rocky Mountain price decreased nearly 1 cent to $3.56 per gallon. </p>
+                                        <br>
+                                        <h4> U.S. Premium Reformulated Retail Gasoline Prices, Weekly </h4>
+                                        <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=PET.EMM_EPMPR_PTE_NUS_DPG.W" load="iframe_load"></iframe>
+                                        <br>
+                                        <br>
+                                        <h4> U.S. Midgrade Reformulated Retail Gasoline Prices, Weekly</h4>
+                                        <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=PET.EMM_EPMMR_PTE_NUS_DPG.W" load="iframe_load"></iframe>
+                                        <br>
+                                        <br>
+                                        <h4> U.S. Regular Reformulated Retail Gasoline Prices, Weekly</h4>
+                                        <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=PET.EMM_EPMRR_PTE_NUS_DPG.W" load="iframe_load"></iframe>
+                                        <br>
+                                        <br>
+                                        <h4> U.S. Product Supplied of Finished Motor Gasoline, Weekly </h4>
+                                        <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=PET.WGFUPUS2.W" load="iframe_load"></iframe>
+                                        <br>
+                                        <div class="single-tags">
+                                            <a href="">Gasoline</a>
+                                            <a href="">Retail Prices</a>
+                                            <a href="">Premium</a>
+                                            <a href="">Midgrade</a>
+                                            <a href="">Reformulated Gasoline</a>
+                                            <a href="">Products Supplied</a>
+                                        </div>
+                                    </div>
+                                </div>
+								<br>
+								<br>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h2> Biofuels </h2>
+                                        <br>
+                                        <h3> Ethanol Production Weekly </h3>
+                                        <br>
+                                        <h4> U.S. Oxygenate Plant Production of Fuel Ethanol, Weekly </h4>
+                                        <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=PET.W_EPOOXE_YOP_NUS_MBBLD.W" load="iframe_load"></iframe>
+                                        <br>
+                                        <br>
+                                        <h4> U.S. Ending Stocks of Fuel Ethanol, Weekly </h4>
+                                        <iframe id="eia_widget" style="width:100%;height:500px" src="//www.eia.gov/opendata/embed/iframe.php?series_id=PET.W_EPOOXE_SAE_NUS_MBBL.W" load="iframe_load"></iframe>
+                                        <br>
+                                        <div class="single-tags">
+                                            <a href="">Biofuels</a>
+                                            <a href="">Ethanol</a>
+                                            <a href="">Production</a>
+                                            <a href="">Stocks</a>
+                                            <a href="">Inventories</a>
+                                        </div>
+                                    </div>
+                                </div>
+								<br>
+								<br>
+								
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h2> Natural Gas </h2>
+                                        <br>
+                                        <h4> Weekly Natural Gas Storage Report, October 21 2021 </h4>
+                                        <p> Working gas in storage was 3,461 Bcf as of Friday, October 15, 2021, according to EIA estimates. This represents a net increase of 92 Bcf from the previous week. Stocks were 458 Bcf less than last year at this time and 151 Bcf below the five-year average of 3,612 Bcf. At 3,461 Bcf, total working gas is within the five-year historical range. </p>
+                                        <p> A summary of EIA Natural Data Storage Data:	</p>
+                                        <p>	Total (10/22/21): 3,548 Bcf 
+                                        <p>	Total (10/15/21): 3,461 Bcf </p>
+                                        <p>	Net change: 87 Bcf </p>
+                                        <p>	Implied flow: 87 Bcf </p>
+                                        <p>	Year ago stocks: 3,951 Bcf </p>
+                                        <p>	% change from year ago: -10.2 % </p> 
+                                        <p>	5-year avg stocks: 3,674 Bcf </p>
+                                        <p>	% change from 5-year avg: -3.4 % </p>
+                                        <br>
+                                        <div class="single-tags">
+                                            <a href="">Natural Gas</a>
+                                            <a href="">Storage Report</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+								<br>
+                            <!-- Page Content End-->
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="sidebar">
+
+                            <div class="sidebar-widget">
+                                <div class="tab-post">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="pill" href="#featured">Featured</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="pill" href="#popular">Popular</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="pill" href="#latest">Latest</a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div id="featured" class="container tab-pane active">
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Petroleum Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/petroleum/weekly/">This Week in Petroleum</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Natural Gas Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/naturalgas/weekly/">Natural Gas Weekly Update</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Petroleum Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/petroleum/weekly/">This Week in Petroleum</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Petroleum Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/petroleum/weekly/">This Week in Petroleum</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Petroleum Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/petroleum/weekly/">This Week in Petroleum</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="popular" class="container tab-pane fade">
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Petroleum Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/naturalgas/weekly/">Natural Gas Weekly Update</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Petroleum Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/petroleum/weekly/">This Week in Petroleum</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Natural Gas Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/naturalgas/weekly/">Natural Gas Weekly Update</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Petroleum Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/petroleum/weekly/">This Week in Petroleum</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Natural Gas Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/naturalgas/weekly/">Natural Gas Weekly Update</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="latest" class="container tab-pane fade">
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Petroleum Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/petroleum/weekly/">This Week in Petroleum</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Natural Gas Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/naturalgas/weekly/">Natural Gas Weekly Update</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Petroleum Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/petroleum/weekly/">This Week in Petroleum</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Natural Gas Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/naturalgas/weekly/">Natural Gas Weekly Update</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/Petroleum Icon.PNG')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="https://www.eia.gov/petroleum/weekly/">This Week in Petroleum</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">EIA</a></p>
+                                                        <p>In<a href="">EIA</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget">
+                                <h2 class="widget-title">Tags Cloud</h2>
+                                <div class="single-tags">
+                                    <a href="">Crude Oil</a>
+                                    <a href="">Gasoline RBOB</a>
+                                    <a href="">Biofuels</a>
+                                    <a href="">Natural Gas</a>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget">
+                                <h2 class="widget-title">Text Widget</h2>
+                                <div class="text-widget">
+                                    <p>
+                                        Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea nec eros. Nunc eu enim non turpis id augue.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Single Post End-->  
+
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact"> 
+                            <h2>Get In Touch</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>Sioux Falls, South Dakota</p>
+                            <p><i class="fa fa-phone-alt"></i>507-217-9263</p>
+                            <p><i class="fa fa-envelope"></i>jamie@paradigmfutures.net</p>
+                            <div class="footer-social">
+                                <a class="btn" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="btn" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Popular Links</h2>
+                            <a href="">About Us</a>
+                            <a href="">Contact Us</a>
+                            <a href="">Our Service</a>
+                            <a href="">Service Points</a>
+                            <a href="">Pricing Plan</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Useful Links</h2>
+                            <a href="">Terms of use</a>
+                            <a href="">Privacy policy</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-newsletter">
+                            <h2>Newsletter</h2>
+                            <form>
+                                <input class="form-control" placeholder="Full Name">
+                                <input class="form-control" placeholder="Email">
+                                <button class="btn btn-custom">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='easing.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='waypoints.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='counterup.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='owl.carousel.min.js') }}"></script>
+
+        
+        <!-- Contact Javascript File -->
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='jqBootstrapValidation.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='contact.js') }}"></script>
+
+        <!-- Template Javascript -->
+        <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='index.js') }}"
+      ></script>
+    </body>
+</html>

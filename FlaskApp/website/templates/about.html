@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div id="sc-ticker-tape"></div>
+       <script src=https://softcapital.com/widget/widget.js></script>
+       <style>
+        .sc-ticker-tape-item {padding: 4px 15px;}
+        .sc-ticker-tape {
+            background: linear-gradient(
+                -45deg,
+             rgba(249, 251, 253, 0.932),
+             rgba(234, 237, 240, 0.932),
+             rgba(239, 241, 245, 0.932),
+             rgba(236, 240, 245, 0.932)
+             );
+              
+
+            background-size: 400% 400%;
+
+           -webkit-animation: Gradient 15s ease infinite;
+
+            -moz-animation: Gradient 15s ease infinite;
+
+            animation: Gradient 15s ease infinite;
+        }
+ 
+            @-webkit-keyframes Gradient {
+                0% {
+                    background-position: 0 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0 50%;
+                }
+            }
+
+            @-moz-keyframes Gradient {
+
+                0% {
+                    background-position: 0 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0 50%;
+                }
+
+            }
+            @keyframes Gradient {
+                0% {
+                    background-position: 0 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0 50%;
+                }
+            }
+       </style>
+       <style>
+        .page-header{
+            height:50px,
+        }
+        .page-header a {
+        font-size: 10px;
+    }
+       </style>
+       <script>
+            createSoftCapitalWidget("TickerTape", "sc-ticker-tape", {
+                symbols:"ES=F,YM=F,NQ=F,RTY=F,ZB=F,ZN=F,ZF=F,ZT=F,GC=F,MGC=F,SI=F,SIL=F,PL=F,HG=F,PA=F,CL=F,HO=F,NG=F,RB=F,BZ=F,B0=F,ZC=F,ZO=F,KE=F,ZR=F,ZM=F,ZL=F,ZS=F,GF=F,HE=F,LE=F,CC=F,KC=F,CT=F,LBS=F,OJ=F,SB=F",
+                rows:1,logo:true,speed:5,mode:"chain",imgHeight:32
+        });
+       </script>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}About{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Google Font -->
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+      />        
+        <!-- CSS Libraries -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/flaticon/font/flaticon.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/animate/animate.min.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/owlcarousel/assets/owl.carousel.min.css') }}">
+
+
+        <!-- Template Stylesheet -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+    </head>
+
+    <body>
+        <!-- Nav Bar Start -->
+        <div class="nav-bar">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a class="nav-item nav-link" id="Home" href="/">Home</a>
+                            <a class="nav-item nav-link" id="Energy" href="/energy">Energy</a>
+                            <a class="nav-item nav-link" id="Agriculture" href="/agriculture">Agriculture</a>
+                            <a class="nav-item nav-link" id="Economy" href="/economy">Economy</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu">
+                                    <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                    <a href="single.html" class="dropdown-item">Detail Page</a>
+                                    <a href="team.html" class="dropdown-item">Team Member</a>
+                                    <a href="booking.html" class="dropdown-item">Schedule Booking</a>
+                                </div>
+                            </div>
+                            <a class="nav-item nav-link active" id="Contact" href="/contact">Contact</a>
+                        </div>
+                        <div class="ml-auto">
+                            <a class="btn btn-custom" href="https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Frraos.rjobrien.com%2FAccount%2FBroker%2FFA4E62B0-99CA-EA11-80F6-8CDCD418B4A8&data=02%7C01%7Cmsabo%40rjobrien.com%7Cd639ced35b724af3b16008d82f0fa85a%7C96e17d10a58f4efcacefbe3521190113%7C0%7C0%7C637311091594538465&sdata=Z%2Fzs1H52Mo1XKjgobwWq6KPcXCEMDkgrYrlWIrmb9XU%3D&reserved=0" target="_blank" rel="noopener noreferrer">Open Account</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+
+        
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Contact</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        <!-- Contact Start -->
+        <div class="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Get In Touch</p>
+                    <h2>Contact for any query</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="contact-info">
+                            <h2>Quick Contact Info</h2>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <h3>Opening Hour</h3>
+                                    <p>Mon - Fri, 8:00 - 9:00</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="far fa-phone-alt"  aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <h3>Call Us</h3>
+                                    <p>+507-217-9263</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="far fa-envelope"  aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <h3>Email Us</h3>
+                                    <p>jamie@paradigmfutures.net</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="contact-form">
+                            <div id="success"></div>
+                            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                                <div class="control-group">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div>
+                                    <button class="btn btn-custom" type="submit" id="sendMessageButton">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d185066.2914898834!2d-96.8639239609879!3d43.5511120360792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x878eb498e0bdacd7%3A0xde95ff3aa8b2fccf!2sSioux%20Falls%2C%20SD!5e0!3m2!1sen!2sus!4v1636513644188!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+
+         <!-- Footer Start -->
+         <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact"> 
+                            <h2>Get In Touch</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>Sioux Falls, South Dakota</p>
+                            <p><i class="fa fa-phone-alt"></i>507-217-9263</p>
+                            <p><i class="fa fa-envelope"></i>jamie@paradigmfutures.net</p>
+                            <div class="footer-social">
+                                <a class="btn" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="btn" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Popular Links</h2>
+                            <a href="">About Us</a>
+                            <a href="">Contact Us</a>
+                            <a href="">Our Service</a>
+                            <a href="">Service Points</a>
+                            <a href="">Pricing Plan</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Useful Links</h2>
+                            <a href="">Terms of use</a>
+                            <a href="">Privacy policy</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-newsletter">
+                            <h2>Newsletter</h2>
+                            <form>
+                                <input class="form-control" placeholder="Full Name">
+                                <input class="form-control" placeholder="Email">
+                                <button class="btn btn-custom">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='easing.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='waypoints.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='counterup.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='owl.carousel.min.js') }}"></script>
+
+        
+        <!-- Contact Javascript File -->
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='jqBootstrapValidation.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='contact.js') }}"></script>
+
+        <!-- Template Javascript -->
+        <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='index.js') }}"
+      ></script>
+    </body>
+</html>

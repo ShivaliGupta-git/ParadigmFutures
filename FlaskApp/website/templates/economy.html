@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div id="sc-ticker-tape"></div>
+    <script src=https://softcapital.com/widget/widget.js></script>
+    <style>
+     .sc-ticker-tape-item {padding: 4px 15px;}
+     .sc-ticker-tape {
+         background: linear-gradient(
+             -45deg,
+             rgba(249, 251, 253, 0.932),
+             rgba(234, 237, 240, 0.932),
+             rgba(239, 241, 245, 0.932),
+             rgba(236, 240, 245, 0.932)
+             );
+
+         background-size: 400% 400%;
+
+        -webkit-animation: Gradient 15s ease infinite;
+
+         -moz-animation: Gradient 15s ease infinite;
+
+         animation: Gradient 15s ease infinite;
+     }
+
+         @-webkit-keyframes Gradient {
+             0% {
+                 background-position: 0 50%;
+             }
+             50% {
+                 background-position: 100% 50%;
+             }
+             100% {
+                 background-position: 0 50%;
+             }
+         }
+
+         @-moz-keyframes Gradient {
+
+             0% {
+                 background-position: 0 50%;
+             }
+             50% {
+                 background-position: 100% 50%;
+             }
+             100% {
+                 background-position: 0 50%;
+             }
+
+         }
+         @keyframes Gradient {
+             0% {
+                 background-position: 0 50%;
+             }
+             50% {
+                 background-position: 100% 50%;
+             }
+             100% {
+                 background-position: 0 50%;
+             }
+         }
+    </style>
+    <style>
+        .sidebar{
+            background-color:#e1e9f0;
+            padding: 20px;
+            box-shadow:
+            inset 0 -3em 3em rgba(207, 206, 206, 0.1),
+                    0 0  0 2px rgb(255,255,255),
+                    0.3em 0.3em 1em rgba(173, 172, 172, 0.3);
+        }
+        .card-body{
+            background-color:#fbfcfde5;
+            padding: 20px;
+            box-shadow:
+            inset 0 -3em 3em rgba(78, 76, 76, 0.1),
+                    0 0  0 2px rgb(255,255,255),
+                    0.3em 0.3em 1em rgba(71, 71, 71, 0.3);
+        }
+    </style>
+    <script>
+         createSoftCapitalWidget("TickerTape", "sc-ticker-tape", {
+             symbols:"ES=F,YM=F,NQ=F,RTY=F,ZB=F,ZN=F,ZF=F,ZT=F,GC=F,MGC=F,SI=F,SIL=F,PL=F,HG=F,PA=F,CL=F,HO=F,NG=F,RB=F,BZ=F,B0=F,ZC=F,ZO=F,KE=F,ZR=F,ZM=F,ZL=F,ZS=F,GF=F,HE=F,LE=F,CC=F,KC=F,CT=F,LBS=F,OJ=F,SB=F",
+             rows:1,logo:true,speed:5,mode:"chain",imgHeight:32
+     });
+    </script>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Economy{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Google Font -->
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+      />        
+        <!-- CSS Libraries -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/flaticon/font/flaticon.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/animate/animate.min.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/owlcarousel/assets/owl.carousel.min.css') }}">
+
+
+        <!-- Template Stylesheet -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+    </head>
+
+    <body>
+        <!-- Nav Bar Start -->
+        <div class="nav-bar">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a class="nav-item nav-link" id="Home" href="/">Home</a>
+                            <a class="nav-item nav-link" id="Energy" href="/energy">Energy</a>
+                            <a class="nav-item nav-link" id="Agriculture" href="/agriculture">Agriculture</a>
+                            <a class="nav-item nav-link active" id="Economy" href="/economy">Economy</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu">
+                                    <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                    <a href="single.html" class="dropdown-item">Detail Page</a>
+                                    <a href="team.html" class="dropdown-item">Team Member</a>
+                                    <a href="booking.html" class="dropdown-item">Schedule Booking</a>
+                                </div>
+                            </div>
+                            <a class="nav-item nav-link" id="Contact" href="/contact">Contact</a>
+                        </div>
+                        <div class="ml-auto">
+                            <a class="btn btn-custom" href="https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Frraos.rjobrien.com%2FAccount%2FBroker%2FFA4E62B0-99CA-EA11-80F6-8CDCD418B4A8&data=02%7C01%7Cmsabo%40rjobrien.com%7Cd639ced35b724af3b16008d82f0fa85a%7C96e17d10a58f4efcacefbe3521190113%7C0%7C0%7C637311091594538465&sdata=Z%2Fzs1H52Mo1XKjgobwWq6KPcXCEMDkgrYrlWIrmb9XU%3D&reserved=0" target="_blank" rel="noopener noreferrer">Open Account</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+
+        
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Economy</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="/">Home</a>
+                        <a href="">Economy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->                   
+       
+        <!-- Single Post Start-->
+        <div class="single">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="single-content">
+                      <!-- Page Content-->
+                      <div class="card">
+                      <div class="card-body">
+                        <h2> TED:The Economics Daily </h2>
+                        <br>
+                        <h3> Final demand producer prices up 8.6 percent for the 12 months ended September 2021 </h3>
+                        <h4> OCTOBER 21, 2021 </h4>
+                        <br>
+                        <image src="{{url_for('static',filename = 'images/12-month-percent-change.jpeg')}}" class="d-block w-100" alt="..." ></image>
+
+                        <br>
+                        <p> The Producer Price Index for final demand increased 8.6 percent for the 12 months ended September 2021, the largest 12-month increase on record. Prices for final demand goods, which account for 32.1 percent of the Producer Price Index, increased 13.3 percent over the year ended September 2021. Final demand services, with a weight of 66.2 percent, increased 6.4 percent from September 2020 to September 2021. Within the goods category, final demand foods, which have a weight of 5.6 percent, increased 12.9 percent. Prices for final demand energy, with a weight of 5.0 percent, increased 36.3 percent over the year. Prices for final demand goods less food and energy, which have a weight of 21.5 percent, increased 8.3 percent. </p>
+                                    
+                        <p> Within the services category, prices for final demand trade services (with a weight of 19.7 percent) increased 9.7 percent over the year. Prices for final demand transportation and warehousing services (weight of 4.1 percent) increased 10.7 percent. Prices for final demand services less trade, transportation, and warehousing (weight of 42.3 percent) increased 4.4 percent during this 12-month period.
+                
+                        Prices for final demand construction, which makes up 1.7 percent of total producer prices, increased 5.2 percent. </p>
+                
+                        These data are from the Producer Price Indexes program and are not seasonally adjusted. To learn more, see "Producer Price Indexes — September 2021." Also see Charts related to the latest "U.S. Producer Price Indexes" news release. Producer price indexes measure prices U.S. producers receive for goods, services, and construction. All producer price data are subject to revision 4 months after initial publication. The relative importance weight of each component represents its share of the total final demand, expressed as a percentage, with the total equal to 100 percent.</p>
+                        <div class="tag-widget">
+                                <a href="">Mining</a>
+                                <a href="">Agriculture</a>
+                                <a href="">Fishing</a>
+                                <a href="">Forestry</a>
+                                <a href="">Natural Gas</a>
+                                <a href="">Electricity</a>
+                                <a href="">Construction</a>
+                                <a href="">Waste</a>
+                                <a href="">Scrap Materials</a>
+                                <a href="">Manfacturing</a>
+                            </div>
+                      </div>
+                      </div>
+                      <br>
+                      <br>
+                      <br>
+                      <div class="card">
+                      <div class="card-body">
+                      <h2 class="headcenter"> Major Economic Indicators </h2>
+                      <br>
+                      <h4> University of Michigan: Consumer Sentiment (UMCSENT) </h4>
+                      <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=Hw1Q&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:670px; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+                      <div class="tag-widget">
+                              <a href="">Monthly Survey</a>
+                              <a href="">Confidence Levels</a>
+                              <a href="">Consumer Sentiment</a>
+                              <a href="">Health of Economy</a>
+                              <a href="">Consumer Opinion</a>
+                          </div>
+                      <br>
+                      <br>
+                      <h4> Personal Consumption Expenditures (PCE) </h4>
+                      <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=HmTO&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:670px; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+                      <div class="tag-widget">
+                              <a href="">Housing</a>
+                              <a href="">Food</a>
+                              <a href="">Energy</a>
+                              <a href="">Clothing</a>
+                              <a href="">Transportation</a>
+                              <a href="">Education</a>
+                              <a href="">Leisure</a>
+                              <a href="">Health</a>
+                      </div>
+                      </div>
+                      </div>
+                      <br>
+                      <br>
+                      <div class="card">
+                      <div class="card-body">
+                      <h4> Consumer Price Index for All Urban Consumers: All Items in U.S. City Average (CPIAUCSL) </h4>
+                      <h5> Consumer Price Index </h5>
+                      <p> In September, the Consumer Price Index for All Urban Consumers rose 0.4 percent on a seasonally adjusted basis; rising 5.4 percent over the last 12 months, not seasonally adjusted. The index for all items less food and energy rose 0.2 percent in September (SA); up 4.0 percent over the year (NSA). </p>
+                      <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=HPkY&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:670px; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+                      <div class="tag-widget">
+                              <a href="">Monthly Survey</a>
+                              <a href="">Confidence Levels</a>
+                              <a href="">Consumer Sentiment</a>
+                              <a href="">Health of Economy</a>
+                              <a href="">Consumer Opinion</a>
+                      </div>
+                      </div>
+                      </div>
+                      <br>
+                      <br>
+                      <div class="card">
+                      <div class="card-body">
+                      <h4> All Employees, Total Nonfarm (PAYEMS) </h4>
+                      <h5> Employement Situation </h5>
+                      <p> Total nonfarm payroll employment rose by 194,000 in September, and the unemployment rate fell to 4.8 percent. Job gains occurred in leisure and hospitality, in professional and business services, in retail trade, and in transportation and warehousing. Employment in public education declined. </p>
+                      <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=I2pu&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:670px; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+                      <div class="tag-widget">
+                              <a href="">Manfacturing</a>
+                              <a href="">Construction</a>
+                              <a href="">Private Household</a>
+                              <a href="">Nonfarms</a>
+                              <a href="">Non-Profit Organisation</a>
+                      </div> 
+                      </div>
+                      </div>
+                      <br>
+                      <br>
+              <!-- Page Content End-->       
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="sidebar">
+
+                            <div class="sidebar-widget">
+                                <div class="tab-post">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="pill" href="#featured">Featured</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="pill" href="#popular">Popular</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="pill" href="#latest">Latest</a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div id="featured" class="container tab-pane active">
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="popular" class="container tab-pane fade">
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="latest" class="container tab-pane fade">
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-item">
+                                                <div class="post-img">
+                                                    <image src="{{url_for('static',filename = 'images/economyIcon.png')}}" ></image>
+                                                </div>
+                                                <div class="post-text">
+                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                    <div class="post-meta">
+                                                        <p>By<a href="">Admin</a></p>
+                                                        <p>In<a href="">Web Design</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget">
+                                <h2 class="widget-title">Tags Cloud</h2>
+                                <div class="tag-widget">
+                                    <a href="">National</a>
+                                    <a href="">International</a>
+                                    <a href="">Economics</a>
+                                    <a href="">Trades</a>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget">
+                                <h2 class="widget-title">Latest Numbers for Major Economic Indicators, U.S. Bureau of Labor Statistics</h2>
+                                <div class="text-widget">
+                                    <?xml version="1.0" encoding="utf-8"?>
+                                    <rss version="2.0" xml:base="https://www.bls.gov/feeds" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                                        <channel>
+                                            <title>Major Economic Indicators Latest Numbers</title>
+                                            <item>
+                                                <description>
+                                              <p>Consumer Price Index (CPI):<br>
+                                                        <strong><span title="All items, U.S. city average, all urban consumers, 1982-84=100, 1-month percent change, seasonally adjusted" class="data">+0.9%  in Oct 2021</span></strong><br>					<a href="https://www.bls.gov/news.release/cpi.toc.htm">News Release</a><br>		
+                                                        <a href="https://data.bls.gov/pdq/SurveyOutputServlet?data_tool=latest_numbers&amp;series_id=CUSR0000SA0&amp;output_view=pct_1mth">Historical Data</a>
+                                                    </p>
+                                                                         
+                                              <p>Unemployment Rate:<br>
+                                                        <strong><span title="In percent, seasonally adjusted" class="data">4.6%  in Oct 2021</span></strong><br>					<a href="https://www.bls.gov/news.release/empsit.toc.htm">News Release</a><br>		
+                                                        <a href="https://data.bls.gov/pdq/SurveyOutputServlet?data_tool=latest_numbers&amp;series_id=LNS14000000">Historical Data</a>
+                                                    </p>
+                                                     
+                                              <p>Payroll Employment:<br>
+                                                        <strong><span title="Number of jobs, 1-month net change, seasonally adjusted" class="data">+531,000(p)  in Oct 2021</span></strong><br>					<a href="https://www.bls.gov/news.release/empsit.toc.htm">News Release</a><br>		
+                                                        <a href="https://data.bls.gov/pdq/SurveyOutputServlet?data_tool=latest_numbers&amp;series_id=CES0000000001&amp;output_view=net_1mth">Historical Data</a>
+                                                    </p>
+                                                     
+                                              <p>Average Hourly Earnings:<br>
+                                                        <strong><span title="For all employees, seasonally adjusted" class="data">+$0.11(p)  in Oct 2021</span></strong><br>					<a href="https://www.bls.gov/news.release/empsit.toc.htm">News Release</a><br>		
+                                                        <a href="https://data.bls.gov/pdq/SurveyOutputServlet?data_tool=latest_numbers&amp;series_id=CES0500000003&amp;output_view=net_1mth">Historical Data</a>
+                                                    </p>
+                                                                         
+                                              <p>Producer Price Index - Final Demand:<br>
+                                                        <strong><span title="Final Demand, 1-month percent change, seasonally adjusted" class="data">+0.6%(p)  in Oct 2021</span></strong><br>					<a href="https://www.bls.gov/news.release/ppi.toc.htm">News Release</a><br>		
+                                                        <a href="https://data.bls.gov/pdq/SurveyOutputServlet?data_tool=latest_numbers&amp;series_id=WPSFD4&amp;output_view=pct_1mth">Historical Data</a>
+                                                    </p>
+                                                                         
+                                              <p>Employment Cost Index (ECI):<br>
+                                                        <strong><span title="Compensation, all civilian workers, quarterly percent change, seasonally adjusted" class="data">+1.3%  in 3rd Qtr of 2021</span></strong><br>					<a href="https://www.bls.gov/news.release/eci.toc.htm">News Release</a><br>		
+                                                        <a href="https://data.bls.gov/pdq/SurveyOutputServlet?data_tool=latest_numbers&amp;series_id=CIS1010000000000Q">Historical Data</a>
+                                                    </p>
+                                                                         
+                                              <p>Productivity:<br>
+                                                        <strong><span title="Output per hour, nonfarm business, percent change from previous quarter at annual rate, seasonally adjusted" class="data">-5.0%  in 3rd Qtr of 2021</span></strong><br>					<a href="https://www.bls.gov/news.release/prod2.toc.htm">News Release</a><br>		
+                                                        <a href="https://data.bls.gov/pdq/SurveyOutputServlet?data_tool=latest_numbers&amp;series_id=PRS85006092">Historical Data</a>
+                                                    </p>
+                                                                         
+                                              <p>U.S. Import Price Index:<br>
+                                                        <strong><span title="All imports, 1-month percent change, not seasonally adjusted" class="data">+1.2%  in Oct 2021</span></strong><br>					<a href="https://www.bls.gov/news.release/ximpim.toc.htm">News Release</a><br>		
+                                                        <a href="https://data.bls.gov/pdq/SurveyOutputServlet?data_tool=latest_numbers&amp;series_id=EIUIR&amp;output_view=pct_1mth">Historical Data</a>
+                                                    </p>
+                                                     
+                                              <p>U.S. Export Price Index:<br>
+                                                        <strong><span title="All exports, 1-month percent change, not seasonally adjusted" class="data">+1.5%  in Oct 2021</span></strong><br>					<a href="https://www.bls.gov/news.release/ximpim.toc.htm">News Release</a><br>		
+                                                        <a href="https://data.bls.gov/pdq/SurveyOutputServlet?data_tool=latest_numbers&amp;series_id=EIUIQ&amp;output_view=pct_1mth">Historical Data</a>
+                                                    </p>
+                                                    </description>
+                                                    <br>
+                                                <b><pubDate>Tue, 16 Nov 2021 08:32:06 -0500</pubDate><br>
+                                                <dc:creator>U.S. Bureau of Labor Statistics</dc:creator></b>
+                                            </item>
+                                        </channel>
+                                    </rss>	<!-- ALL VARIABLES	Errors: 	Config: 	Data: 	-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Single Post End-->  
+
+
+
+
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact"> 
+                            <h2>Get In Touch</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>Sioux Falls, South Dakota</p>
+                            <p><i class="fa fa-phone-alt"></i>507-217-9263</p>
+                            <p><i class="fa fa-envelope"></i>jamie@paradigmfutures.net</p>
+                            <div class="footer-social">
+                                <a class="btn" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="btn" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Popular Links</h2>
+                            <a href="">About Us</a>
+                            <a href="">Contact Us</a>
+                            <a href="">Our Service</a>
+                            <a href="">Service Points</a>
+                            <a href="">Pricing Plan</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Useful Links</h2>
+                            <a href="">Terms of use</a>
+                            <a href="">Privacy policy</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-newsletter">
+                            <h2>Newsletter</h2>
+                            <form>
+                                <input class="form-control" placeholder="Full Name">
+                                <input class="form-control" placeholder="Email">
+                                <button class="btn btn-custom">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='easing.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='waypoints.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='counterup.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='owl.carousel.min.js') }}"></script>
+
+        
+        <!-- Contact Javascript File -->
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='jqBootstrapValidation.min.js') }}"></script>
+        <script type="text/javascript"
+        src="{{ url_for('static', filename='contact.js') }}"></script>
+
+        <!-- Template Javascript -->
+        <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='index.js') }}"
+      ></script>
+    </body>
+</html>
